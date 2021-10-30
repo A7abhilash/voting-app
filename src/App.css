@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bg-gray {
+  background-color: #313131;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

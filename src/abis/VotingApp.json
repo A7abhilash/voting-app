@@ -1,0 +1,406 @@
+{
+  "contractName": "VotingApp",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "name",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":true,\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/src/contracts/VotingApp.sol\":\"VotingApp\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/src/contracts/VotingApp.sol\":{\"keccak256\":\"0x8676d0c4ce09b38742446e4bfc66233df99331e05b5c909fbcf94db4443e7a41\",\"urls\":[\"bzz-raw://813684efe69dafce90460f2c10e8dec319b6320dc6e6c73044e5b0a5cbec0943\",\"dweb:/ipfs/Qmbknk3YhCbMG3czkEBKi96uLQuNFQHxnNG7FXXLf2P1jw\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040518060400160405280600981526020017f566f74696e6741707000000000000000000000000000000000000000000000008152506000908051906020019061005c929190610062565b50610107565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106100a357805160ff19168380011785556100d1565b828001600101855582156100d1579182015b828111156100d05782518255916020019190600101906100b5565b5b5090506100de91906100e2565b5090565b61010491905b808211156101005760008160009055506001016100e8565b5090565b90565b6101ea806101166000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c806306fdde0314610030575b600080fd5b61003861004e565b6040516100459190610125565b60405180910390f35b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156100e45780601f106100b9576101008083540402835291602001916100e4565b820191906000526020600020905b8154815290600101906020018083116100c757829003601f168201915b505050505081565b60006100f782610147565b6101018185610152565b9350610111818560208601610163565b61011a81610196565b840191505092915050565b6000602082019050818103600083015261013f81846100ec565b905092915050565b600081519050919050565b600082825260208201905092915050565b60005b83811015610181578082015181840152602081019050610166565b83811115610190576000848401525b50505050565b6000601f19601f830116905091905056fea365627a7a723158201b9fa884a567d40bf0fef74246f462b3956e4eed5e01a7d55a4d06c54cacab766c6578706572696d656e74616cf564736f6c63430005100040",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c806306fdde0314610030575b600080fd5b61003861004e565b6040516100459190610125565b60405180910390f35b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156100e45780601f106100b9576101008083540402835291602001916100e4565b820191906000526020600020905b8154815290600101906020018083116100c757829003601f168201915b505050505081565b60006100f782610147565b6101018185610152565b9350610111818560208601610163565b61011a81610196565b840191505092915050565b6000602082019050818103600083015261013f81846100ec565b905092915050565b600081519050919050565b600082825260208201905092915050565b60005b83811015610181578082015181840152602081019050610166565b83811115610190576000848401525b50505050565b6000601f19601f830116905091905056fea365627a7a723158201b9fa884a567d40bf0fef74246f462b3956e4eed5e01a7d55a4d06c54cacab766c6578706572696d656e74616cf564736f6c63430005100040",
+  "sourceMap": "62:97:1:-;;;108:48;8:9:-1;5:2;;;30:1;27;20:12;5:2;108:48:1;133:18;;;;;;;;;;;;;;;;;:4;:18;;;;;;;;;;;;:::i;:::-;;62:97;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "62:97:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;62:97:1;;;;;;;;;;;;;;;;;;;84:18;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;5:339:-1:-;;113:35;142:5;113:35;;;160:71;224:6;219:3;160:71;;;153:78;;236:52;281:6;276:3;269:4;262:5;258:16;236:52;;;309:29;331:6;309:29;;;304:3;300:39;293:46;;93:251;;;;;;351:293;;485:2;474:9;470:18;462:26;;535:9;529:4;525:20;521:1;510:9;506:17;499:47;560:74;629:4;620:6;560:74;;;552:82;;456:188;;;;;651:118;;741:5;735:12;725:22;;706:63;;;;777:163;;892:6;887:3;880:19;929:4;924:3;920:14;905:29;;873:67;;;;;949:268;1014:1;1021:101;1035:6;1032:1;1029:13;1021:101;;;1111:1;1106:3;1102:11;1096:18;1092:1;1087:3;1083:11;1076:39;1057:2;1054:1;1050:10;1045:15;;1021:101;;;1137:6;1134:1;1131:13;1128:2;;;1202:1;1193:6;1188:3;1184:16;1177:27;1128:2;998:219;;;;;1225:97;;1313:2;1309:7;1304:2;1297:5;1293:14;1289:28;1279:38;;1273:49;;;",
+  "source": "pragma solidity ^0.5.0;\r\npragma experimental ABIEncoderV2;\r\n\r\ncontract VotingApp{\r\n\tstring public name;\r\n\r\n\tconstructor() public{\r\n\t\tname = \"VotingApp\";\r\n\t}\r\n}",
+  "sourcePath": "D:\\Engineering\\Dev\\Blockchain Development\\Projects\\VotingApp\\src\\contracts\\VotingApp.sol",
+  "ast": {
+    "absolutePath": "project:/src/contracts/VotingApp.sol",
+    "exportedSymbols": {
+      "VotingApp": [
+        70
+      ]
+    },
+    "id": 71,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 58,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "id": 59,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "25:33:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 70,
+        "linearizedBaseContracts": [
+          70
+        ],
+        "name": "VotingApp",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 61,
+            "name": "name",
+            "nodeType": "VariableDeclaration",
+            "scope": 70,
+            "src": "84:18:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_storage",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 60,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "84:6:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 68,
+              "nodeType": "Block",
+              "src": "128:28:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 66,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 64,
+                      "name": "name",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 61,
+                      "src": "133:4:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "566f74696e67417070",
+                      "id": 65,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "string",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "140:11:1",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_stringliteral_ff9cbdc55388e17c13dbb1775cb48f7619960e6016528fd694868aa0ddf406a7",
+                        "typeString": "literal_string \"VotingApp\""
+                      },
+                      "value": "VotingApp"
+                    },
+                    "src": "133:18:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 67,
+                  "nodeType": "ExpressionStatement",
+                  "src": "133:18:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 69,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 62,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "119:2:1"
+            },
+            "returnParameters": {
+              "id": 63,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "128:0:1"
+            },
+            "scope": 70,
+            "src": "108:48:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 71,
+        "src": "62:97:1"
+      }
+    ],
+    "src": "0:159:1"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/src/contracts/VotingApp.sol",
+      "exportedSymbols": {
+        "VotingApp": [
+          70
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.5",
+            ".0"
+          ]
+        },
+        "id": 58,
+        "name": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "attributes": {
+          "literals": [
+            "experimental",
+            "ABIEncoderV2"
+          ]
+        },
+        "id": 59,
+        "name": "PragmaDirective",
+        "src": "25:33:1"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            70
+          ],
+          "name": "VotingApp",
+          "scope": 71
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "name",
+              "scope": 70,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "string",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "string",
+                  "type": "string"
+                },
+                "id": 60,
+                "name": "ElementaryTypeName",
+                "src": "84:6:1"
+              }
+            ],
+            "id": 61,
+            "name": "VariableDeclaration",
+            "src": "84:18:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "scope": 70,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 62,
+                "name": "ParameterList",
+                "src": "119:2:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 63,
+                "name": "ParameterList",
+                "src": "128:0:1"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "string storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 61,
+                              "type": "string storage ref",
+                              "value": "name"
+                            },
+                            "id": 64,
+                            "name": "Identifier",
+                            "src": "133:4:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "566f74696e67417070",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"VotingApp\"",
+                              "value": "VotingApp"
+                            },
+                            "id": 65,
+                            "name": "Literal",
+                            "src": "140:11:1"
+                          }
+                        ],
+                        "id": 66,
+                        "name": "Assignment",
+                        "src": "133:18:1"
+                      }
+                    ],
+                    "id": 67,
+                    "name": "ExpressionStatement",
+                    "src": "133:18:1"
+                  }
+                ],
+                "id": 68,
+                "name": "Block",
+                "src": "128:28:1"
+              }
+            ],
+            "id": 69,
+            "name": "FunctionDefinition",
+            "src": "108:48:1"
+          }
+        ],
+        "id": 70,
+        "name": "ContractDefinition",
+        "src": "62:97:1"
+      }
+    ],
+    "id": 71,
+    "name": "SourceUnit",
+    "src": "0:159:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xaB8a2f44C8ea2E1B1b0508d48fc704Ec513A21b5",
+      "transactionHash": "0x5b95b50cd56e2704196f62e40bdb6192dbf189b4cb628f876ab85106c3827e03"
+    }
+  },
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-10-30T06:34:18.422Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
