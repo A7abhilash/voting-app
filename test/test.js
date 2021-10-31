@@ -53,7 +53,7 @@ contract("VotingApp", (accounts) => {
 
     it("creates candidate", async () => {
       /*  SUCCESS */
-      assert.equal(phase.toNumber(), 0, "it is registration phase");
+      assert.equal(phase.toNumber(), 0, "it is candidate-registration phase");
       assert.equal(
         candidatesCount.toNumber(),
         3,
@@ -73,6 +73,28 @@ contract("VotingApp", (accounts) => {
       // Candidate name is required
       await votingApp.createCandidate("", { from: deployer }).should.be
         .rejected;
+    });
+
+    it("changes phase", async () => {
+      /*  SUCCESS */
+      result = await votingApp.changePhase({ from: deployer });
+      phase = result.logs[0].args.phase;
+      assert.equal(phase.toNumber(), 1, "it is voters-registration phase");
+
+      result = await votingApp.changePhase({ from: deployer });
+      phase = result.logs[0].args.phase;
+      assert.equal(phase.toNumber(), 2, "it is voting phase");
+
+      result = await votingApp.changePhase({ from: deployer });
+      phase = result.logs[0].args.phase;
+      assert.equal(phase.toNumber(), 3, "it is results phase");
+
+      /*  FAILURE */
+      // Only admin can change the phase
+      await votingApp.changePhase({ from: voter2 }).should.be.rejected;
+
+      // Election is over
+      await votingApp.changePhase({ from: deployer }).should.be.rejected;
     });
   });
 

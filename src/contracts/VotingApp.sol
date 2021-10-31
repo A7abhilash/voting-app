@@ -64,7 +64,7 @@ contract VotingApp{
 	}
 
 	function changePhase() public onlyAdmin{
-		require(phase <= 3, "Election is over!");
+		require(phase < 3, "Election is over!");
 
 		phase++;
 
