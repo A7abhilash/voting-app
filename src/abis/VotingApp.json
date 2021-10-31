@@ -10,6 +10,36 @@
     {
       "constant": true,
       "inputs": [],
+      "name": "admin",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "adminGoogleId",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
       "name": "name",
       "outputs": [
         {
@@ -23,21 +53,21 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":true,\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/src/contracts/VotingApp.sol\":\"VotingApp\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/src/contracts/VotingApp.sol\":{\"keccak256\":\"0x8676d0c4ce09b38742446e4bfc66233df99331e05b5c909fbcf94db4443e7a41\",\"urls\":[\"bzz-raw://813684efe69dafce90460f2c10e8dec319b6320dc6e6c73044e5b0a5cbec0943\",\"dweb:/ipfs/Qmbknk3YhCbMG3czkEBKi96uLQuNFQHxnNG7FXXLf2P1jw\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b506040518060400160405280600981526020017f566f74696e6741707000000000000000000000000000000000000000000000008152506000908051906020019061005c929190610062565b50610107565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106100a357805160ff19168380011785556100d1565b828001600101855582156100d1579182015b828111156100d05782518255916020019190600101906100b5565b5b5090506100de91906100e2565b5090565b61010491905b808211156101005760008160009055506001016100e8565b5090565b90565b6101ea806101166000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c806306fdde0314610030575b600080fd5b61003861004e565b6040516100459190610125565b60405180910390f35b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156100e45780601f106100b9576101008083540402835291602001916100e4565b820191906000526020600020905b8154815290600101906020018083116100c757829003601f168201915b505050505081565b60006100f782610147565b6101018185610152565b9350610111818560208601610163565b61011a81610196565b840191505092915050565b6000602082019050818103600083015261013f81846100ec565b905092915050565b600081519050919050565b600082825260208201905092915050565b60005b83811015610181578082015181840152602081019050610166565b83811115610190576000848401525b50505050565b6000601f19601f830116905091905056fea365627a7a723158201b9fa884a567d40bf0fef74246f462b3956e4eed5e01a7d55a4d06c54cacab766c6578706572696d656e74616cf564736f6c63430005100040",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c806306fdde0314610030575b600080fd5b61003861004e565b6040516100459190610125565b60405180910390f35b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156100e45780601f106100b9576101008083540402835291602001916100e4565b820191906000526020600020905b8154815290600101906020018083116100c757829003601f168201915b505050505081565b60006100f782610147565b6101018185610152565b9350610111818560208601610163565b61011a81610196565b840191505092915050565b6000602082019050818103600083015261013f81846100ec565b905092915050565b600081519050919050565b600082825260208201905092915050565b60005b83811015610181578082015181840152602081019050610166565b83811115610190576000848401525b50505050565b6000601f19601f830116905091905056fea365627a7a723158201b9fa884a567d40bf0fef74246f462b3956e4eed5e01a7d55a4d06c54cacab766c6578706572696d656e74616cf564736f6c63430005100040",
-  "sourceMap": "62:97:1:-;;;108:48;8:9:-1;5:2;;;30:1;27;20:12;5:2;108:48:1;133:18;;;;;;;;;;;;;;;;;:4;:18;;;;;;;;;;;;:::i;:::-;;62:97;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
-  "deployedSourceMap": "62:97:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;62:97:1;;;;;;;;;;;;;;;;;;;84:18;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;5:339:-1:-;;113:35;142:5;113:35;;;160:71;224:6;219:3;160:71;;;153:78;;236:52;281:6;276:3;269:4;262:5;258:16;236:52;;;309:29;331:6;309:29;;;304:3;300:39;293:46;;93:251;;;;;;351:293;;485:2;474:9;470:18;462:26;;535:9;529:4;525:20;521:1;510:9;506:17;499:47;560:74;629:4;620:6;560:74;;;552:82;;456:188;;;;;651:118;;741:5;735:12;725:22;;706:63;;;;777:163;;892:6;887:3;880:19;929:4;924:3;920:14;905:29;;873:67;;;;;949:268;1014:1;1021:101;1035:6;1032:1;1029:13;1021:101;;;1111:1;1106:3;1102:11;1096:18;1092:1;1087:3;1083:11;1076:39;1057:2;1054:1;1050:10;1045:15;;1021:101;;;1137:6;1134:1;1131:13;1128:2;;;1202:1;1193:6;1188:3;1184:16;1177:27;1128:2;998:219;;;;;1225:97;;1313:2;1309:7;1304:2;1297:5;1293:14;1289:28;1279:38;;1273:49;;;",
-  "source": "pragma solidity ^0.5.0;\r\npragma experimental ABIEncoderV2;\r\n\r\ncontract VotingApp{\r\n\tstring public name;\r\n\r\n\tconstructor() public{\r\n\t\tname = \"VotingApp\";\r\n\t}\r\n}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":true,\"inputs\":[],\"name\":\"admin\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"adminGoogleId\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/src/contracts/VotingApp.sol\":\"VotingApp\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/src/contracts/VotingApp.sol\":{\"keccak256\":\"0x839c439c879880e887b57fb9338a509fab374b0e2b324d56a1dbb7809c037c51\",\"urls\":[\"bzz-raw://2806814226820838b291fa7cf1add5c421b095cf6725b21f71820b622ea1b6a7\",\"dweb:/ipfs/QmatBs4gSmU2wZbScRGERn4Sau2UenhXMt1n31fXZjWux3\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040518060400160405280600981526020017f566f74696e6741707000000000000000000000000000000000000000000000008152506000908051906020019061005c9291906100c9565b5033600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060405180602001604052806000815250600190805190602001906100c39291906100c9565b5061016e565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061010a57805160ff1916838001178555610138565b82800160010185558215610138579182015b8281111561013757825182559160200191906001019061011c565b5b5090506101459190610149565b5090565b61016b91905b8082111561016757600081600090555060010161014f565b5090565b90565b61035c8061017d6000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c806306fdde0314610046578063737eca7c14610064578063f851a44014610082575b600080fd5b61004e6100a0565b60405161005b9190610265565b60405180910390f35b61006c61013e565b6040516100799190610265565b60405180910390f35b61008a6101dc565b604051610097919061024a565b60405180910390f35b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101365780601f1061010b57610100808354040283529160200191610136565b820191906000526020600020905b81548152906001019060200180831161011957829003601f168201915b505050505081565b60018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101d45780601f106101a9576101008083540402835291602001916101d4565b820191906000526020600020905b8154815290600101906020018083116101b757829003601f168201915b505050505081565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b61020b816102a3565b82525050565b600061021c82610287565b6102268185610292565b93506102368185602086016102d5565b61023f81610308565b840191505092915050565b600060208201905061025f6000830184610202565b92915050565b6000602082019050818103600083015261027f8184610211565b905092915050565b600081519050919050565b600082825260208201905092915050565b60006102ae826102b5565b9050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b60005b838110156102f35780820151818401526020810190506102d8565b83811115610302576000848401525b50505050565b6000601f19601f830116905091905056fea365627a7a72315820a154c31cda7c9b2746db645a18b6b91e62872ec7ead66d50a333a9c0dfa784476c6578706572696d656e74616cf564736f6c63430005100040",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c806306fdde0314610046578063737eca7c14610064578063f851a44014610082575b600080fd5b61004e6100a0565b60405161005b9190610265565b60405180910390f35b61006c61013e565b6040516100799190610265565b60405180910390f35b61008a6101dc565b604051610097919061024a565b60405180910390f35b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101365780601f1061010b57610100808354040283529160200191610136565b820191906000526020600020905b81548152906001019060200180831161011957829003601f168201915b505050505081565b60018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101d45780601f106101a9576101008083540402835291602001916101d4565b820191906000526020600020905b8154815290600101906020018083116101b757829003601f168201915b505050505081565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b61020b816102a3565b82525050565b600061021c82610287565b6102268185610292565b93506102368185602086016102d5565b61023f81610308565b840191505092915050565b600060208201905061025f6000830184610202565b92915050565b6000602082019050818103600083015261027f8184610211565b905092915050565b600081519050919050565b600082825260208201905092915050565b60006102ae826102b5565b9050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b60005b838110156102f35780820151818401526020810190506102d8565b83811115610302576000848401525b50505050565b6000601f19601f830116905091905056fea365627a7a72315820a154c31cda7c9b2746db645a18b6b91e62872ec7ead66d50a333a9c0dfa784476c6578706572696d656e74616cf564736f6c63430005100040",
+  "sourceMap": "62:198:1:-;;;163:94;8:9:-1;5:2;;;30:1;27;20:12;5:2;163:94:1;188:18;;;;;;;;;;;;;;;;;:4;:18;;;;;;;;;;;;:::i;:::-;;219:10;211:5;;:18;;;;;;;;;;;;;;;;;;234;;;;;;;;;;;;:13;:18;;;;;;;;;;;;:::i;:::-;;62:198;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "62:198:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;62:198:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;84:18;;;:::i;:::-;;;;;;;;;;;;;;;;106:27;;;:::i;:::-;;;;;;;;;;;;;;;;137:20;;;:::i;:::-;;;;;;;;;;;;;;;;84:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;106:27::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;137:20::-;;;;;;;;;;;;;:::o;5:113:-1:-;88:24;106:5;88:24;;;83:3;76:37;70:48;;;125:339;;233:35;262:5;233:35;;;280:71;344:6;339:3;280:71;;;273:78;;356:52;401:6;396:3;389:4;382:5;378:16;356:52;;;429:29;451:6;429:29;;;424:3;420:39;413:46;;213:251;;;;;;471:213;;589:2;578:9;574:18;566:26;;603:71;671:1;660:9;656:17;647:6;603:71;;;560:124;;;;;691:293;;825:2;814:9;810:18;802:26;;875:9;869:4;865:20;861:1;850:9;846:17;839:47;900:74;969:4;960:6;900:74;;;892:82;;796:188;;;;;991:118;;1081:5;1075:12;1065:22;;1046:63;;;;1117:163;;1232:6;1227:3;1220:19;1269:4;1264:3;1260:14;1245:29;;1213:67;;;;;1288:91;;1350:24;1368:5;1350:24;;;1339:35;;1333:46;;;;1386:121;;1459:42;1452:5;1448:54;1437:65;;1431:76;;;;1515:268;1580:1;1587:101;1601:6;1598:1;1595:13;1587:101;;;1677:1;1672:3;1668:11;1662:18;1658:1;1653:3;1649:11;1642:39;1623:2;1620:1;1616:10;1611:15;;1587:101;;;1703:6;1700:1;1697:13;1694:2;;;1768:1;1759:6;1754:3;1750:16;1743:27;1694:2;1564:219;;;;;1791:97;;1879:2;1875:7;1870:2;1863:5;1859:14;1855:28;1845:38;;1839:49;;;",
+  "source": "pragma solidity ^0.5.0;\r\npragma experimental ABIEncoderV2;\r\n\r\ncontract VotingApp{\r\n\tstring public name;\r\n\tstring public adminGoogleId;\r\n\taddress public admin;\r\n\r\n\tconstructor() public{\r\n\t\tname = \"VotingApp\";\r\n\t\tadmin = msg.sender;\r\n\t\tadminGoogleId = \"\";\r\n\t}\r\n}",
   "sourcePath": "D:\\Engineering\\Dev\\Blockchain Development\\Projects\\VotingApp\\src\\contracts\\VotingApp.sol",
   "ast": {
     "absolutePath": "project:/src/contracts/VotingApp.sol",
     "exportedSymbols": {
       "VotingApp": [
-        70
+        83
       ]
     },
-    "id": 71,
+    "id": 84,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -66,9 +96,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 70,
+        "id": 83,
         "linearizedBaseContracts": [
-          70
+          83
         ],
         "name": "VotingApp",
         "nodeType": "ContractDefinition",
@@ -78,7 +108,7 @@
             "id": 61,
             "name": "name",
             "nodeType": "VariableDeclaration",
-            "scope": 70,
+            "scope": 83,
             "src": "84:18:1",
             "stateVariable": true,
             "storageLocation": "default",
@@ -100,27 +130,80 @@
             "visibility": "public"
           },
           {
+            "constant": false,
+            "id": 63,
+            "name": "adminGoogleId",
+            "nodeType": "VariableDeclaration",
+            "scope": 83,
+            "src": "106:27:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_storage",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 62,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "106:6:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 65,
+            "name": "admin",
+            "nodeType": "VariableDeclaration",
+            "scope": 83,
+            "src": "137:20:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 64,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "137:7:1",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
             "body": {
-              "id": 68,
+              "id": 81,
               "nodeType": "Block",
-              "src": "128:28:1",
+              "src": "183:74:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 66,
+                    "id": 70,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 64,
+                      "id": 68,
                       "name": "name",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 61,
-                      "src": "133:4:1",
+                      "src": "188:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
                         "typeString": "string storage ref"
@@ -131,14 +214,14 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "566f74696e67417070",
-                      "id": 65,
+                      "id": 69,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "string",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "140:11:1",
+                      "src": "195:11:1",
                       "subdenomination": null,
                       "typeDescriptions": {
                         "typeIdentifier": "t_stringliteral_ff9cbdc55388e17c13dbb1775cb48f7619960e6016528fd694868aa0ddf406a7",
@@ -146,56 +229,169 @@
                       },
                       "value": "VotingApp"
                     },
-                    "src": "133:18:1",
+                    "src": "188:18:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 67,
+                  "id": 71,
                   "nodeType": "ExpressionStatement",
-                  "src": "133:18:1"
+                  "src": "188:18:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 75,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 72,
+                      "name": "admin",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 65,
+                      "src": "211:5:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 73,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 98,
+                        "src": "219:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 74,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "219:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "211:18:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 76,
+                  "nodeType": "ExpressionStatement",
+                  "src": "211:18:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 79,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 77,
+                      "name": "adminGoogleId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 63,
+                      "src": "234:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "",
+                      "id": 78,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "string",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "250:2:1",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
+                        "typeString": "literal_string \"\""
+                      },
+                      "value": ""
+                    },
+                    "src": "234:18:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 80,
+                  "nodeType": "ExpressionStatement",
+                  "src": "234:18:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 69,
+            "id": 82,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 62,
+              "id": 66,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "119:2:1"
+              "src": "174:2:1"
             },
             "returnParameters": {
-              "id": 63,
+              "id": 67,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "128:0:1"
+              "src": "183:0:1"
             },
-            "scope": 70,
-            "src": "108:48:1",
+            "scope": 83,
+            "src": "163:94:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 71,
-        "src": "62:97:1"
+        "scope": 84,
+        "src": "62:198:1"
       }
     ],
-    "src": "0:159:1"
+    "src": "0:260:1"
   },
   "legacyAST": {
     "attributes": {
       "absolutePath": "project:/src/contracts/VotingApp.sol",
       "exportedSymbols": {
         "VotingApp": [
-          70
+          83
         ]
       }
     },
@@ -236,17 +432,17 @@
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            70
+            83
           ],
           "name": "VotingApp",
-          "scope": 71
+          "scope": 84
         },
         "children": [
           {
             "attributes": {
               "constant": false,
               "name": "name",
-              "scope": 70,
+              "scope": 83,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "string",
@@ -270,6 +466,59 @@
           },
           {
             "attributes": {
+              "constant": false,
+              "name": "adminGoogleId",
+              "scope": 83,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "string",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "string",
+                  "type": "string"
+                },
+                "id": 62,
+                "name": "ElementaryTypeName",
+                "src": "106:6:1"
+              }
+            ],
+            "id": 63,
+            "name": "VariableDeclaration",
+            "src": "106:27:1"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "admin",
+              "scope": 83,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "address",
+                  "stateMutability": "nonpayable",
+                  "type": "address"
+                },
+                "id": 64,
+                "name": "ElementaryTypeName",
+                "src": "137:7:1"
+              }
+            ],
+            "id": 65,
+            "name": "VariableDeclaration",
+            "src": "137:20:1"
+          },
+          {
+            "attributes": {
               "documentation": null,
               "implemented": true,
               "isConstructor": true,
@@ -278,7 +527,7 @@
                 null
               ],
               "name": "",
-              "scope": 70,
+              "scope": 83,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -291,9 +540,9 @@
                   ]
                 },
                 "children": [],
-                "id": 62,
+                "id": 66,
                 "name": "ParameterList",
-                "src": "119:2:1"
+                "src": "174:2:1"
               },
               {
                 "attributes": {
@@ -302,9 +551,9 @@
                   ]
                 },
                 "children": [],
-                "id": 63,
+                "id": 67,
                 "name": "ParameterList",
-                "src": "128:0:1"
+                "src": "183:0:1"
               },
               {
                 "children": [
@@ -331,9 +580,9 @@
                               "type": "string storage ref",
                               "value": "name"
                             },
-                            "id": 64,
+                            "id": 68,
                             "name": "Identifier",
-                            "src": "133:4:1"
+                            "src": "188:4:1"
                           },
                           {
                             "attributes": {
@@ -348,39 +597,161 @@
                               "type": "literal_string \"VotingApp\"",
                               "value": "VotingApp"
                             },
-                            "id": 65,
+                            "id": 69,
                             "name": "Literal",
-                            "src": "140:11:1"
+                            "src": "195:11:1"
                           }
                         ],
-                        "id": 66,
+                        "id": 70,
                         "name": "Assignment",
-                        "src": "133:18:1"
+                        "src": "188:18:1"
                       }
                     ],
-                    "id": 67,
+                    "id": 71,
                     "name": "ExpressionStatement",
-                    "src": "133:18:1"
+                    "src": "188:18:1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "address"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 65,
+                              "type": "address",
+                              "value": "admin"
+                            },
+                            "id": 72,
+                            "name": "Identifier",
+                            "src": "211:5:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address payable"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 98,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 73,
+                                "name": "Identifier",
+                                "src": "219:3:1"
+                              }
+                            ],
+                            "id": 74,
+                            "name": "MemberAccess",
+                            "src": "219:10:1"
+                          }
+                        ],
+                        "id": 75,
+                        "name": "Assignment",
+                        "src": "211:18:1"
+                      }
+                    ],
+                    "id": 76,
+                    "name": "ExpressionStatement",
+                    "src": "211:18:1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "string storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 63,
+                              "type": "string storage ref",
+                              "value": "adminGoogleId"
+                            },
+                            "id": 77,
+                            "name": "Identifier",
+                            "src": "234:13:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"\"",
+                              "value": ""
+                            },
+                            "id": 78,
+                            "name": "Literal",
+                            "src": "250:2:1"
+                          }
+                        ],
+                        "id": 79,
+                        "name": "Assignment",
+                        "src": "234:18:1"
+                      }
+                    ],
+                    "id": 80,
+                    "name": "ExpressionStatement",
+                    "src": "234:18:1"
                   }
                 ],
-                "id": 68,
+                "id": 81,
                 "name": "Block",
-                "src": "128:28:1"
+                "src": "183:74:1"
               }
             ],
-            "id": 69,
+            "id": 82,
             "name": "FunctionDefinition",
-            "src": "108:48:1"
+            "src": "163:94:1"
           }
         ],
-        "id": 70,
+        "id": 83,
         "name": "ContractDefinition",
-        "src": "62:97:1"
+        "src": "62:198:1"
       }
     ],
-    "id": 71,
+    "id": 84,
     "name": "SourceUnit",
-    "src": "0:159:1"
+    "src": "0:260:1"
   },
   "compiler": {
     "name": "solc",
@@ -390,12 +761,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xaB8a2f44C8ea2E1B1b0508d48fc704Ec513A21b5",
-      "transactionHash": "0x5b95b50cd56e2704196f62e40bdb6192dbf189b4cb628f876ab85106c3827e03"
+      "address": "0x5717A275f68BD1Dfd6C84cBd7977e091f2548828",
+      "transactionHash": "0x359196d26f4873aa75522869b5e52d0a80002ca3cb0da0b79b5f9aa3f37b7280"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-10-30T06:34:18.422Z",
+  "updatedAt": "2021-10-31T09:34:59.565Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

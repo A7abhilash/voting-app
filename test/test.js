@@ -24,5 +24,12 @@ contract("VotingApp", (accounts) => {
       const name = await votingApp.name();
       assert.equal(name, "VotingApp");
     });
+
+    it("has an admin and google id", async () => {
+      const admin = await votingApp.admin();
+      assert.equal(admin, deployer);
+      const adminGoogleId = await votingApp.adminGoogleId();
+      assert.equal(adminGoogleId, "116975414122189328909");
+    });
   });
 });
