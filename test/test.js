@@ -53,6 +53,7 @@ contract("VotingApp", (accounts) => {
     let result, candidatesCount, phase;
 
     before(async () => {
+      // Should be 0
       phase = await votingApp.phase();
 
       await votingApp.createCandidate("Candidate 1", { from: deployer });
@@ -89,14 +90,17 @@ contract("VotingApp", (accounts) => {
 
     it("changes phase", async () => {
       /*  SUCCESS */
+      // Should change to 1
       result = await votingApp.changePhase({ from: deployer });
       phase = result.logs[0].args.phase;
       assert.equal(phase.toNumber(), 1, "it is voters-registration phase");
 
+      // Should change to 2
       result = await votingApp.changePhase({ from: deployer });
       phase = result.logs[0].args.phase;
       assert.equal(phase.toNumber(), 2, "it is voting phase");
 
+      // Should change to 3
       result = await votingApp.changePhase({ from: deployer });
       phase = result.logs[0].args.phase;
       assert.equal(phase.toNumber(), 3, "it is results phase");
@@ -106,15 +110,18 @@ contract("VotingApp", (accounts) => {
       await votingApp.changePhase({ from: voter2 }).should.be.rejected;
 
       // Election is over
+      // Should not change
       await votingApp.changePhase({ from: deployer }).should.be.rejected;
     });
 
     it("resets phase", async () => {
       /*  SUCCESS */
+      // Resets to 0
       result = await votingApp.resetPhase({ from: deployer });
       phase = result.logs[0].args.phase;
       assert.equal(phase.toNumber(), 0, "it is candidate-registration phase");
 
+      // Should change to 1
       result = await votingApp.changePhase({ from: deployer });
       phase = result.logs[0].args.phase;
       assert.equal(phase.toNumber(), 1, "it is voter-registration phase");
@@ -161,18 +168,127 @@ contract("VotingApp", (accounts) => {
         .be.rejected;
 
       // Registration phase is over
+      // Should change to 2
       await votingApp.changePhase();
       await votingApp.registerVoter(googleId[voter1], { from: voter1 }).should
         .be.rejected;
 
       // Registration phase is not started
+      // Resets to 0
       await votingApp.resetPhase();
       await votingApp.registerVoter(googleId[voter1], { from: voter1 }).should
         .be.rejected;
     });
-  });
 
-  // // Registration phase is not started
-  // await votingApp.createCandidate("Candidate 8", { from: deployer }).should
-  //   .be.rejected;
+    it("admin approves voter", async () => {
+      /* SUCCESS */
+      // Resets to 0
+      await votingApp.resetPhase();
+      // Should change to 1
+      await votingApp.changePhase();
+
+      await votingApp.approveVoter(voter1, { from: deployer });
+      await votingApp.approveVoter(voter2, { from: deployer });
+      await votingApp.approveVoter(voter4, { from: deployer });
+      result = await votingApp.approveVoter(voter5, { from: deployer });
+
+      let voter = result.logs[0].args;
+      assert.equal(voter.voterId, voter5, "voter id is correct");
+      assert.equal(voter.googleId, googleId[voter5], "google id is correct");
+      assert.equal(
+        voter.isVotingApproved,
+        true,
+        "voter is approved for voting"
+      );
+
+      /* FAILURES */
+      // Only admin can approve
+      await votingApp.approveVoter(voter5, { from: voter1 }).should.be.rejected;
+
+      // Invalid voter id
+      await votingApp.approveVoter(accounts[9], { from: deployer }).should.be
+        .rejected;
+
+      // Registration phase is over
+      // Should change to 2
+      await votingApp.changePhase();
+      await votingApp.approveVoter(voter1, { from: deployer }).should.be
+        .rejected;
+
+      // Registration phase is not started
+      // Resets to 0
+      await votingApp.resetPhase();
+      await votingApp.approveVoter(voter1, { from: deployer }).should.be
+        .rejected;
+    });
+
+    it("voter can cast their vote", async () => {
+      /* SUCCESS */
+      // Resets to 0
+      await votingApp.resetPhase({ from: deployer });
+      // Changes to 1
+      await votingApp.changePhase({ from: deployer });
+
+      await votingApp.approveVoter(voter1, { from: deployer });
+
+      // Changes to 2
+      await votingApp.changePhase({ from: deployer });
+
+      // Test w.r.t events emitted
+      result = await votingApp.castVote(2, {
+        from: voter5,
+      });
+      let vote = result.logs[0].args;
+      // console.log(voter);
+      assert.equal(vote.voterId, voter5, "voter id is correct");
+      assert.equal(vote.candidateId, 2, "candidate id is correct");
+      assert.equal(vote.votesCount.toNumber(), 1, "voters count is correct");
+
+      await votingApp.castVote(1, { from: voter1 });
+      await votingApp.castVote(1, { from: voter2 });
+      // await votingApp.castVote(1, { from: voter3 });
+      result = await votingApp.castVote(1, { from: voter4 });
+
+      vote = result.logs[0].args;
+      assert.equal(vote.voterId, voter4, "voter id is correct");
+      assert.equal(vote.candidateId, 1, "candidate id is correct");
+      assert.equal(vote.votesCount.toNumber(), 3, "voters count is correct");
+
+      // Test w.r.t candidates list
+      const candidate1 = await votingApp.candidates(1);
+      assert.equal(
+        candidate1.votesCount.toNumber(),
+        3,
+        "candidate 1's votes count is correct"
+      );
+      const candidate2 = await votingApp.candidates(2);
+      assert.equal(
+        candidate2.votesCount.toNumber(),
+        1,
+        "candidate 2's votes count is correct"
+      );
+      const candidate3 = await votingApp.candidates(3);
+      assert.equal(
+        candidate3.votesCount.toNumber(),
+        0,
+        "candidate 3's votes count is correct"
+      );
+
+      /* FAILURES */
+      // Invalid candidate id
+      await votingApp.castVote(8, { from: voter1 }).should.be.rejected;
+      // Invalid voter
+      await votingApp.castVote(2, { from: accounts[9] }).should.be.rejected;
+      // Voter is not approved
+      await votingApp.castVote(1, { from: voter3 }).should.be.rejected;
+
+      // Voting phase is over
+      await votingApp.changePhase();
+      await votingApp.castVote(1, { from: voter1 }).should.be.rejected;
+
+      // Voting phase is not started
+      await votingApp.resetPhase();
+      await votingApp.castVote(2, { from: voter1 }).should.be.rejected;
+    });
+  });
 });
