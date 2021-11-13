@@ -5,6 +5,13 @@ require("chai").use(require("chai-as-promised")).should();
 contract("VotingApp", (accounts) => {
   let votingApp;
   const [deployer, voter1, voter2, voter3, voter4, voter5] = accounts;
+  const googleId = {
+    [voter1]: "google1",
+    [voter2]: "google2",
+    [voter3]: "google3",
+    [voter4]: "google4",
+    [voter5]: "google5",
+  };
 
   before(async () => {
     votingApp = await VotingApp.deployed();
@@ -34,6 +41,11 @@ contract("VotingApp", (accounts) => {
     it("initially, phase is 0", async () => {
       const phase = await votingApp.phase();
       assert.equal(phase.toNumber(), 0);
+    });
+
+    it("initially, voters count is 0", async () => {
+      const votersCount = await votingApp.votersCount();
+      assert.equal(votersCount.toNumber(), 0);
     });
   });
 
@@ -95,6 +107,68 @@ contract("VotingApp", (accounts) => {
 
       // Election is over
       await votingApp.changePhase({ from: deployer }).should.be.rejected;
+    });
+
+    it("resets phase", async () => {
+      /*  SUCCESS */
+      result = await votingApp.resetPhase({ from: deployer });
+      phase = result.logs[0].args.phase;
+      assert.equal(phase.toNumber(), 0, "it is candidate-registration phase");
+
+      result = await votingApp.changePhase({ from: deployer });
+      phase = result.logs[0].args.phase;
+      assert.equal(phase.toNumber(), 1, "it is voter-registration phase");
+
+      /*  FAILURE */
+      // Only admin can change the phase
+      await votingApp.resetPhase({ from: voter2 }).should.be.rejected;
+    });
+  });
+
+  describe("voters func", async () => {
+    let result, votersCount, phase;
+
+    before(async () => {
+      phase = await votingApp.phase();
+      assert.equal(phase.toNumber(), 1, "it is voter-registration phase");
+    });
+
+    it("voter can register", async () => {
+      /* SUCCESS */
+      await votingApp.registerVoter(googleId[voter1], { from: voter1 });
+      await votingApp.registerVoter(googleId[voter2], { from: voter2 });
+      await votingApp.registerVoter(googleId[voter3], { from: voter3 });
+      await votingApp.registerVoter(googleId[voter4], { from: voter4 });
+      result = await votingApp.registerVoter(googleId[voter5], {
+        from: voter5,
+      });
+      let voter = result.logs[0].args;
+      // console.log(voter);
+      votersCount = await votingApp.votersCount();
+      assert.equal(votersCount.toNumber(), 5, "voters count is 5");
+
+      assert.equal(voter.voterId, voter5, "voter id is correct");
+      assert.equal(voter.googleId, googleId[voter5], "google id is correct");
+      assert.equal(voter.isVotingApproved, false, "voter is not approved");
+
+      /* FAILURES */
+      // Only unique voter id and google id
+      await votingApp.registerVoter(googleId[voter1], { from: voter1 }).should
+        .be.rejected;
+      await votingApp.registerVoter(googleId[voter1], { from: voter2 }).should
+        .be.rejected;
+      await votingApp.registerVoter(googleId[voter3], { from: voter2 }).should
+        .be.rejected;
+
+      // Registration phase is over
+      await votingApp.changePhase();
+      await votingApp.registerVoter(googleId[voter1], { from: voter1 }).should
+        .be.rejected;
+
+      // Registration phase is not started
+      await votingApp.resetPhase();
+      await votingApp.registerVoter(googleId[voter1], { from: voter1 }).should
+        .be.rejected;
     });
   });
 
