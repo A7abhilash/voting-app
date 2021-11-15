@@ -234,7 +234,7 @@ contract("VotingApp", (accounts) => {
       // Changes to 2
       await votingApp.changePhase({ from: deployer });
 
-      // Test w.r.t events emitted
+      // Test w.r.t event emitted
       result = await votingApp.castVote(2, {
         from: voter5,
       });
@@ -282,11 +282,16 @@ contract("VotingApp", (accounts) => {
       // Voter is not approved
       await votingApp.castVote(1, { from: voter3 }).should.be.rejected;
 
+      // voter already casted his vote
+      await votingApp.castVote(1, { from: voter1 }).should.be.rejected;
+
       // Voting phase is over
+      // phase changes to 3
       await votingApp.changePhase();
       await votingApp.castVote(1, { from: voter1 }).should.be.rejected;
 
       // Voting phase is not started
+      // phase resets to 0
       await votingApp.resetPhase();
       await votingApp.castVote(2, { from: voter1 }).should.be.rejected;
     });

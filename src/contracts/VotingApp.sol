@@ -148,6 +148,9 @@ contract VotingApp{
 		// Make sure voter has been approved
 		require(getVoter(msg.sender, "").isVotingApproved, 'Voter is not approved to cast vote');
 
+		// Make sure voter has not casted yet
+		require(!votersCasted[msg.sender], 'Voter has already casted his vote');
+
 		// Cast vote
 		votersCasted[msg.sender] = true;
 		Candidate memory _candidate = candidates[_candidateId];
