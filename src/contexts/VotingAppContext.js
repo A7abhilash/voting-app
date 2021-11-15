@@ -12,6 +12,7 @@ function VotingAppProvider({ children }) {
   const { votingAppContract } = useBlockchain();
   const [loading, setLoading] = useState(true);
   const [loadingMsg, setLoadingMsg] = useState("");
+  const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
     if (!loading) {
@@ -29,6 +30,11 @@ function VotingAppProvider({ children }) {
 
   async function loadBlockchainData() {
     try {
+      // Get admin
+      const _adminGoogleId = await votingAppContract.methods
+        .adminGoogleId()
+        .call();
+      setIsAdmin(_adminGoogleId == user.googleId);
       //
     } catch (error) {
       console.log(error);
@@ -40,6 +46,7 @@ function VotingAppProvider({ children }) {
     <VotingAppContext.Provider
       value={{
         loadBlockchainData,
+        isAdmin,
       }}
     >
       {loading ? <Loading loadingMsg={loadingMsg} /> : children}
