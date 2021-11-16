@@ -34,7 +34,7 @@ function VotingAppProvider({ children }) {
       const _adminGoogleId = await votingAppContract.methods
         .adminGoogleId()
         .call();
-      setIsAdmin(_adminGoogleId == user.googleId);
+      setIsAdmin(_adminGoogleId === user.googleId);
       //
     } catch (error) {
       console.log(error);
