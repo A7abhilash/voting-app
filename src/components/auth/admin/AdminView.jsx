@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import CreateCandidate from "./candidates/CreateCandidate";
 import PhaseSelector from "./phase/PhaseSelector";
 
 function AdminView({ views, selectedView }) {
@@ -7,7 +8,7 @@ function AdminView({ views, selectedView }) {
   useEffect(() => {
     switch (selectedView) {
       case views[0]:
-        setView(<h1>Register</h1>);
+        setView(<CreateCandidate />);
         break;
       case views[1]:
         setView(<h2>Approve</h2>);
