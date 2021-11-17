@@ -1,40 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useBlockchain } from "../../../../contexts/BlockchainContext";
 import candidateIcon from "../../../../candidate.png";
+import { useVotingApp } from "../../../../contexts/VotingAppContext";
 
 function CreateCandidate() {
-  const [candidates, setCandidates] = useState([]);
-  const [phase, setPhase] = useState("");
   const [name, setName] = useState("");
   const { votingAppContract, account } = useBlockchain();
-
-  useEffect(() => {
-    loadCandidatesList();
-
-    votingAppContract.methods
-      .phase()
-      .call()
-      .then((_phase) => {
-        setPhase(_phase);
-      });
-  }, []);
-
-  const loadCandidatesList = async () => {
-    try {
-      const _candidatesCount = await votingAppContract.methods
-        .candidatesCount()
-        .call();
-      const _candidates = [];
-      for (let i = 1; i <= _candidatesCount; i++) {
-        let _candidate = await votingAppContract.methods.candidates(i).call();
-        _candidates.unshift(_candidate);
-      }
-      // console.log(_candidates);
-      setCandidates(_candidates);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const { phase, candidates } = useVotingApp();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -50,7 +22,8 @@ function CreateCandidate() {
         .createCandidate(name)
         .send({ from: account })
         .on("receipt", () => {
-          loadCandidatesList();
+          window.location.reload();
+          alert("New candidate added!");
         });
     } catch (error) {
       console.log(error);

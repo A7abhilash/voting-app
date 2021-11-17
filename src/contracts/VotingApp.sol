@@ -11,8 +11,8 @@ contract VotingApp{
 	uint public phase;
 	/*
 		0: Election is announced to be held and candidates can be created by admin
-		1: Registration - Voters can register
-		2: Voting - Voters are eligigle to vote. No new candidates!
+		1: Registration - Voters can register. No new candidates can be added!
+		2: Voting - Voters are eligigle to vote.
 		3: Results - No more voting!
 	*/
 
