@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { useBlockchain } from "../../../../contexts/BlockchainContext";
-import candidateIcon from "../../../../candidate.png";
-import { useVotingApp } from "../../../../contexts/VotingAppContext";
+import React, { useState } from "react";
+import { useBlockchain } from "../../../contexts/BlockchainContext";
+import candidateIcon from "../../../candidate.png";
+import { useVotingApp } from "../../../contexts/VotingAppContext";
 
 function CreateCandidate() {
   const [name, setName] = useState("");

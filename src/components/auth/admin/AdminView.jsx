@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import CreateCandidate from "./candidates/CreateCandidate";
-import PhaseSelector from "./phase/PhaseSelector";
+import CreateCandidate from "./CreateCandidate";
+import PhaseSelector from "./PhaseSelector";
 
 function AdminView({ views, selectedView }) {
   const [view, setView] = useState(<h1>Loading</h1>);

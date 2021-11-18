@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import ListCandidates from "./candidates/ListCandidates";
+import ListCandidates from "./ListCandidates";
+import Register from "./Register";
 
 function VoterView({ views, selectedView }) {
   const [view, setView] = useState(<h1>Loading</h1>);
@@ -10,7 +11,7 @@ function VoterView({ views, selectedView }) {
         setView(<h2>User Manual</h2>);
         break;
       case views[1]:
-        setView(<h2>Register</h2>);
+        setView(<Register />);
         break;
       case views[2]:
         setView(<ListCandidates />);

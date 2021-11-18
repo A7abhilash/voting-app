@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
-import { useBlockchain } from "../../../../contexts/BlockchainContext";
+import { useBlockchain } from "../../../contexts/BlockchainContext";
 
 function PhaseSelector() {
   const { account, votingAppContract, getErrorMessage } = useBlockchain();

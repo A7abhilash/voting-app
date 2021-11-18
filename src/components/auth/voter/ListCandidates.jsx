@@ -1,7 +1,7 @@
 import React from "react";
-import { useBlockchain } from "../../../../contexts/BlockchainContext";
-import candidateIcon from "../../../../candidate.png";
-import { useVotingApp } from "../../../../contexts/VotingAppContext";
+import { useBlockchain } from "../../../contexts/BlockchainContext";
+import candidateIcon from "../../../candidate.png";
+import { useVotingApp } from "../../../contexts/VotingAppContext";
 
 function ListCandidates() {
   const { votingAppContract, account } = useBlockchain();
