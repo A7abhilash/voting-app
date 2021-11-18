@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ApproveVoters from "./ApproveVoters";
 import CreateCandidate from "./CreateCandidate";
 import PhaseSelector from "./PhaseSelector";
 
@@ -11,7 +12,7 @@ function AdminView({ views, selectedView }) {
         setView(<CreateCandidate />);
         break;
       case views[1]:
-        setView(<h2>Approve</h2>);
+        setView(<ApproveVoters />);
         break;
       case views[2]:
         setView(<PhaseSelector />);
