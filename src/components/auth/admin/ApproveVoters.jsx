@@ -63,13 +63,7 @@ function ApproveVoters() {
                   Approve Voter
                 </button>
               ) : (
-                <Badge bg="success">
-                  <i
-                    className="fas fa-check-circle"
-                    style={{ marginRight: 5 }}
-                  ></i>
-                  Voter Approved
-                </Badge>
+                <Badge bg="success">Voter Approved</Badge>
               )}
             </div>
           </div>

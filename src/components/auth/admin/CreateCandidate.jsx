@@ -22,8 +22,8 @@ function CreateCandidate() {
         .createCandidate(name)
         .send({ from: account })
         .on("receipt", () => {
-          window.location.reload();
           alert("New candidate added!");
+          window.location.reload();
         });
     } catch (error) {
       console.log(error);
