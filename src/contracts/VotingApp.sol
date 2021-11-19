@@ -98,6 +98,9 @@ contract VotingApp{
 			revert('Registration phase is over!');
 		}
 
+		// Make sure address is not the admin
+		require(msg.sender != admin, "Voter is already registered!");
+
 		// Make sure voter is not yet registered
 		require(getVoter(msg.sender, _googleId).voterId == address(0x0), "Voter is already registered!");
 

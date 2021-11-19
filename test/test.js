@@ -159,6 +159,10 @@ contract("VotingApp", (accounts) => {
       assert.equal(voter.isVotingApproved, false, "voter is not approved");
 
       /* FAILURES */
+      // Address should not be owner's
+      await votingApp.registerVoter(googleId[voter1], { from: deployer }).should
+        .be.rejected;
+
       // Only unique voter id and google id
       await votingApp.registerVoter(googleId[voter1], { from: voter1 }).should
         .be.rejected;
