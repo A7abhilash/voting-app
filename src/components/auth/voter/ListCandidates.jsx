@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useBlockchain } from "../../../contexts/BlockchainContext";
 import candidateIcon from "../../../candidate.png";
 import { useVotingApp } from "../../../contexts/VotingAppContext";
@@ -6,9 +6,26 @@ import { useVotingApp } from "../../../contexts/VotingAppContext";
 function ListCandidates() {
   const { votingAppContract, account } = useBlockchain();
   const { candidates, phase } = useVotingApp();
+  const [hasVoted, setHasVoted] = useState(true);
+
+  useEffect(() => {
+    getVoterStatus();
+  }, []);
+
+  const getVoterStatus = async () => {
+    try {
+      const status = await votingAppContract.methods
+        .votersCasted(account)
+        .call();
+      // console.log(status);
+      setHasVoted(status);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const castVote = (id) => {
-    console.log("called");
+    // console.log("called");
     try {
       votingAppContract.methods
         .castVote(id)
@@ -44,7 +61,7 @@ function ListCandidates() {
               <button
                 className="btn btn-dark btn-sm"
                 onClick={() => castVote(candidate.candidateId)}
-                disabled={phase !== "2"}
+                disabled={phase !== "2" || hasVoted}
               >
                 Cast Vote
               </button>
