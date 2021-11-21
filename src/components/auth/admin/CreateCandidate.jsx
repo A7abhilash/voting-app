@@ -66,7 +66,9 @@ function CreateCandidate() {
                 <p className="mb-0">
                   <small>Candidate ID: {candidate.candidateId}</small>
                 </p>
-                <p className="mb-0">Count: {candidate.votesCount}</p>
+                {phase === "3" && (
+                  <p className="mb-0">Count: {candidate.votesCount}</p>
+                )}
               </div>
             </div>
           ))}
