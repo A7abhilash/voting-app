@@ -4,57 +4,51 @@
 
 `React` `Solidity` `Truffle` `Web3.js`
 
-<!-- ### Features
+### Features
 
-- Create / Edit Accounts
-- Send / Request Amount (Transactions) via account no., phone no. and DPay ID
-- Fulfill / Reject Requested Amount
-- Lists transaction history -->
+- Admin: Create candidates, sets phase of election, can approve voters.
+- Voter: Can register themselves with public address and google ID, can cast their vote.
 
-<!-- ### Screenshots -->
+### Screenshots
 
-<!-- <div align="center">
-#1 #2 Profile(Accounts) | #3 #4 Search account(and made necessary transaction-send/request amount) | #5 Transaction History | #6 Request Amount Section | #7 Transaction modal
+ <div align="center">
+#1 #2 #3 Admin | #4 #5 #6 #7 Voter
 </div>
 
 <div>
 <img
-src="screenshots/DP-1.png"
-alt="Profile"
+src="screenshots/VA-1.png"
+alt="Admin"
 style="border-radius:5px;"
 />
 <img
-src="screenshots/DP-2.png"
-alt="Profile"
+src="screenshots/VA-2.png"
+alt="Admin"
 style="border-radius:5px;"
 />
 <img
-src="screenshots/DP-3.png"
-alt="Search via Account no."
+src="screenshots/VA-3.png"
+alt="Admin"
 style="border-radius:5px;"
 />
 <img
-src="screenshots/DP-4.png"
-alt="Search via Phone no."
+src="screenshots/VA-4.png"
+alt="Voter"
 style="border-radius:5px;"
 />
 <img
-src="screenshots/DP-5.png"
-alt="Transaction History"
+src="screenshots/VA-5.png"
+alt="Voter"
 style="border-radius:5px;"
 />
 <img
-src="screenshots/DP-6.png"
-alt="Request Amount Section"
+src="screenshots/VA-6.png"
+alt="Voter"
 style="border-radius:5px;"
 />
 <img
-src="screenshots/DP-7.png"
-alt="Transaction modal"
+src="screenshots/VA-7.png"
+alt="Voter"
 style="border-radius:5px;"
 />
-</div> -->
-
-<!-- ```js
-PS: Here amount refers to ethers!!!
-``` -->
+</div>
