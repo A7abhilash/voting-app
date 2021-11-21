@@ -45,7 +45,7 @@ function ApproveVoters() {
     <div>
       <p className="display-4">Approve Voters</p>
       <div className="d-flex flex-wrap my-2">
-        {voters.map((voter) => (
+        {voters.map((voter, index) => (
           <div key={voter.googleId} className="card m-1">
             <div className="card-body p-3">
               <h6>{voter.voterId}</h6>
@@ -54,11 +54,11 @@ function ApproveVoters() {
                   <strong>Google ID:</strong> {voter.googleId}
                 </small>
               </p>
-              {!voter.isVotingApproved ? (
+              {!voter.isVotingApproved || index === 2 ? (
                 <button
                   className="btn btn-dark btn-sm"
                   onClick={() => approveVoter(voter.voterId)}
-                  disabled={phase !== "1"}
+                  // disabled={phase !== "1"}
                 >
                   Approve Voter
                 </button>

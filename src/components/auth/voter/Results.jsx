@@ -4,7 +4,6 @@ import { useVotingApp } from "../../../contexts/VotingAppContext";
 import candidateIcon from "../../../candidate.png";
 
 function Results() {
-  const { votingAppContract } = useBlockchain();
   const { phase, candidates } = useVotingApp();
   const [winner, setWinner] = useState({});
 
@@ -16,8 +15,10 @@ function Results() {
 
   const getWinner = () => {
     try {
-      const _candidates = candidates.sort((a, b) => parseInt(b.votesCount, 10) - parseInt(a.votesCount, 10));
-      console.log(_candidates);
+      const _candidates = candidates.sort(
+        (a, b) => parseInt(b.votesCount, 10) - parseInt(a.votesCount, 10)
+      );
+      //   console.log(_candidates);
 
       setWinner(_candidates[0]);
     } catch (error) {

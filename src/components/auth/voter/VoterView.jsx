@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ListCandidates from "./ListCandidates";
+import Manual from "./Manual";
 import Register from "./Register";
 import Results from "./Results";
 
@@ -9,7 +10,7 @@ function VoterView({ views, selectedView }) {
   useEffect(() => {
     switch (selectedView) {
       case views[0]:
-        setView(<h2>User Manual</h2>);
+        setView(<Manual />);
         break;
       case views[1]:
         setView(<Register />);
